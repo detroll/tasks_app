@@ -2,6 +2,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-datepicker3";
+@import "font-awesome";
 
 body {
   padding-top: 70px;
@@ -9,4 +10,8 @@ body {
 
 div#task-form {
   display: none;
+}
+
+.task a:hover {
+  text-decoration: line-through;
 }

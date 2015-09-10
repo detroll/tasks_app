@@ -5,14 +5,14 @@
 
 
   <div class="col-sm-3">
-    <%= link_to 'New User task', new_user_task_path, remote: true, class: "btn btn-default" %>
+    <%= link_to new_user_task_path, remote: true do %>
+      <button class="btn btn-success"><%= fa_icon "plus" %> Add Task</button>
+    <% end %>
     <div id="task-form"></div>
   </div>
   <div class="col-sm-9">
     <div id="tasks">
-      <ul>
-        <%= render @user_tasks %>
-      </ul>
+      <%= render @user_tasks %>
     </div>
   </div>
 </div>
