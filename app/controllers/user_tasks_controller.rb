@@ -75,12 +75,22 @@ class UserTasksController < ApplicationController
     end
 
     def all_tasks
-      @user_tasks = UserTask.order(:due) 
+      @user_tasks = UserTask.where(user_id: current_user.id).order(:due) 
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_user_task
       @user_task = UserTask.find(params[:id])
+      if @user_task.user_id == current_user.id
+        @user_task
+      else
+        invalid_task
+      end
+    end
+
+    def invalid_task
+      logger.eror "Attempt to access invalid task #{params[:id]}"
+      redirect_to user_tasks_url, notice: "Invalid task"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
