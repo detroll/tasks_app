@@ -2,6 +2,7 @@ class UserTasksController < ApplicationController
   before_action :authenticate!
   before_action :set_user_task, only: [:show, :edit, :update, :destroy]
   before_action :all_tasks, only: [:index, :create, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_task
 
   # GET /user_tasks
   # GET /user_tasks.json

@@ -4,6 +4,9 @@
 @import "bootstrap-datepicker3";
 @import "font-awesome";
 
+$primary_blue : #00B4FF;
+$darker_blue : #00A3E7;
+
 body {
   padding-top: 80px;
 }
@@ -15,3 +18,17 @@ div#task-form {
 .task a:hover {
   text-decoration: line-through;
 }
+
+h1 {
+  color: $primary_blue;
+}
+
+div.well {
+  background-color: white;
+  .pull-right {
+    font-style: italic;
+  }
+}
+
+
+
