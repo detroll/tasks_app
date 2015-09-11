@@ -15,15 +15,14 @@ div#task-form {
   display: none;
 }
 
-.task a:hover {
+.task a[data-method="delete"]:hover {
   text-decoration: line-through;
 }
-
 h1 {
   color: $primary_blue;
 }
 
-div.well {
+.well {
   background-color: white;
   .pull-right {
     font-style: italic;
